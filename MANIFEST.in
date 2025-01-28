@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pearl_pack *.css
+recursive-include pearl_pack *.csv
+recursive-include pearl_pack *.html
+recursive-include pearl_pack *.ico
+recursive-include pearl_pack *.js
+recursive-include pearl_pack *.json
+recursive-include pearl_pack *.md
+recursive-include pearl_pack *.png
+recursive-include pearl_pack *.py
+recursive-include pearl_pack *.svg
+recursive-include pearl_pack *.txt
+recursive-exclude pearl_pack *.pyc
