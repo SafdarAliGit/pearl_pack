@@ -4,4 +4,4 @@ this pearl pack
 
 #### License
 
-mit
+mit# pearl_pack
