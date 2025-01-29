@@ -24,18 +24,16 @@
   },
   {
    "default": "0",
-   "fetch_from": "source_item.qty_in_kgs",
    "fieldname": "qty_in_kgs",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Qty In Kgs",
    "read_only": 1
   },
   {
    "default": "0",
-   "fetch_from": "source_item.qty_in_meters",
    "fieldname": "qty_in_meters",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Qty In Meters",
    "read_only": 1
@@ -66,7 +64,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-29 07:35:05.289469",
+ "modified": "2025-01-29 19:21:05.820577",
  "modified_by": "Administrator",
  "module": "Pearl Pack",
  "name": "Source Item",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2025-01-28 23:25:36.680993",
  "default_view": "List",
  "doctype": "DocType",
@@ -12,6 +13,8 @@
   "source_warehouse",
   "column_break_khwc3",
   "target_warehouse",
+  "column_break_ylktv",
+  "naming_series",
   "amended_from",
   "finish_item_section",
   "target_item",
@@ -168,15 +171,28 @@
    "fieldtype": "Float",
    "hidden": 1,
    "label": "Item Kg"
+  },
+  {
+   "fieldname": "column_break_ylktv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "PRO-.DD.-.",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-29 07:19:15.216010",
+ "modified": "2025-01-29 19:25:47.317204",
  "modified_by": "Administrator",
  "module": "Pearl Pack",
  "name": "Production",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
