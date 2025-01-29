@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-28 23:25:36.680993",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_volps",
+  "source_warehouse",
+  "column_break_khwc3",
+  "target_warehouse",
+  "amended_from",
+  "finish_item_section",
+  "target_item",
+  "column_break_usmmh",
+  "qty",
+  "column_break_q8fwz",
+  "uom",
+  "column_break_s1at5",
+  "meter",
+  "column_break_7uuy2",
+  "kg",
+  "item_meter",
+  "item_kg",
+  "section_break_jvuyz",
+  "source_item",
+  "section_break_ze2m8",
+  "saource_item_amount",
+  "column_break_jjuse",
+  "target_item_rate"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Production",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_volps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_khwc3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "finish_item_section",
+   "fieldtype": "Section Break",
+   "label": "Finish Item"
+  },
+  {
+   "fieldname": "target_item",
+   "fieldtype": "Link",
+   "label": "Target Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty"
+  },
+  {
+   "default": "Nos",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "default": "0",
+   "fieldname": "meter",
+   "fieldtype": "Float",
+   "label": "Meter",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "kg",
+   "fieldtype": "Float",
+   "label": "KG",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_usmmh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_q8fwz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_s1at5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_7uuy2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jvuyz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "source_item",
+   "fieldtype": "Table",
+   "label": "Source Item",
+   "options": "Source Item"
+  },
+  {
+   "fieldname": "section_break_ze2m8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "saource_item_amount",
+   "fieldtype": "Currency",
+   "label": "Saource Item Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "target_item_rate",
+   "fieldtype": "Currency",
+   "label": "Target Item Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jjuse",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "target_item.qty_in_meters",
+   "fieldname": "item_meter",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Item Meter"
+  },
+  {
+   "default": "0",
+   "fetch_from": "target_item.qty_in_kgs",
+   "fieldname": "item_kg",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Item Kg"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-29 07:19:15.216010",
+ "modified_by": "Administrator",
+ "module": "Pearl Pack",
+ "name": "Production",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
