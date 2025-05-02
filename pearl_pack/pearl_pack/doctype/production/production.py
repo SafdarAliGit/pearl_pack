@@ -29,7 +29,10 @@ class Production(Document):
             source_item.set_basic_rate_manually = 1
             source_item.s_warehouse = self.source_warehouse  # Correct field for source warehouse
             source_item.item_code = item.source_item  # Correct field name
-            source_item.qty = item.qty_in_kgs
+            if item.uom == "Nos":
+                source_item.qty = item.available_qty
+            else:
+                source_item.qty = item.qty_in_kgs
             source_item.valuation_rate = item.rate
             source_item.basic_rate = item.rate
 
