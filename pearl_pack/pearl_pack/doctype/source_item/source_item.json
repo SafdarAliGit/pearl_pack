@@ -2,7 +2,6 @@
  "actions": [],
  "allow_rename": 1,
  "creation": "2025-01-28 23:19:03.771239",
- "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -12,7 +11,8 @@
   "qty_in_meters",
   "available_qty",
   "rate",
-  "amount"
+  "amount",
+  "uom"
  ],
  "fields": [
   {
@@ -59,12 +59,19 @@
    "in_list_view": 1,
    "label": "Amount",
    "read_only": 1
+  },
+  {
+   "fetch_from": "source_item.stock_uom",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Uom",
+   "options": "UOM"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-29 19:21:05.820577",
+ "modified": "2025-05-02 20:18:12.397545",
  "modified_by": "Administrator",
  "module": "Pearl Pack",
  "name": "Source Item",

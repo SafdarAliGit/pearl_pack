@@ -28,8 +28,14 @@ frappe.ui.form.on('Production', {
 frappe.ui.form.on('Source Item', {
 	source_item:function(frm,cdt,cdn){
 		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt,cdn,'qty_in_kgs',frm.doc.kg);
-		frappe.model.set_value(cdt,cdn,'qty_in_meters',frm.doc.meter);
+		if(row.uom == 'Nos') {
+			frappe.model.set_value(cdt,cdn,'qty_in_kgs',0);
+			frappe.model.set_value(cdt,cdn,'qty_in_meters',0);
+		}else{
+			frappe.model.set_value(cdt,cdn,'qty_in_kgs',frm.doc.qty);
+			frappe.model.set_value(cdt,cdn,'qty_in_meters',frm.doc.qty);
+		}	
+		
 
 		frappe.call({
 			method: 'pearl_pack.pearl_pack.events.fetch_current_qty.fetch_current_qty',
@@ -41,7 +47,11 @@ frappe.ui.form.on('Source Item', {
 				if (r.message && r.message.length > 0) {
 					frappe.model.set_value(cdt, cdn, 'available_qty', r.message[0].qty_after_transaction || 0);
 					frappe.model.set_value(cdt, cdn, 'rate', r.message[0].valuation_rate || 0);
-					frappe.model.set_value(cdt,cdn,'amount',flt(row.qty_in_kgs) * flt(row.rate));
+					if(row.uom == 'Nos') {
+						frappe.model.set_value(cdt,cdn,'amount',flt(r.message[0].qty_after_transaction || 0) * flt(row.rate));
+					}else{
+						frappe.model.set_value(cdt,cdn,'amount',flt(row.qty_in_kgs) * flt(row.rate));
+					}
 					
 
 				} else {

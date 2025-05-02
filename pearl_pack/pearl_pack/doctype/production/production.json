@@ -3,7 +3,6 @@
  "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2025-01-28 23:25:36.680993",
- "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -193,7 +192,7 @@
    "link_fieldname": "production"
   }
  ],
- "modified": "2025-01-29 21:08:48.062396",
+ "modified": "2025-05-02 20:07:05.165462",
  "modified_by": "Administrator",
  "module": "Pearl Pack",
  "name": "Production",
