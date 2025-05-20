@@ -28,13 +28,13 @@ frappe.ui.form.on('Production', {
 frappe.ui.form.on('Source Item', {
 	source_item:function(frm,cdt,cdn){
 		let row = locals[cdt][cdn];
-		if(row.uom == 'Nos') {
-			frappe.model.set_value(cdt,cdn,'qty_in_kgs',0);
-			frappe.model.set_value(cdt,cdn,'qty_in_meters',0);
-		}else{
-			frappe.model.set_value(cdt,cdn,'qty_in_kgs',frm.doc.qty);
-			frappe.model.set_value(cdt,cdn,'qty_in_meters',frm.doc.qty);
-		}	
+		// if(row.uom == 'Nos') {
+		// 	frappe.model.set_value(cdt,cdn,'qty_in_kgs',0);
+		// 	frappe.model.set_value(cdt,cdn,'qty_in_meters',0);
+		// }else{
+		// 	frappe.model.set_value(cdt,cdn,'qty_in_kgs',frm.doc.qty);
+		// 	frappe.model.set_value(cdt,cdn,'qty_in_meters',frm.doc.qty);
+		// }	
 		
 
 		frappe.call({
@@ -47,22 +47,32 @@ frappe.ui.form.on('Source Item', {
 				if (r.message && r.message.length > 0) {
 					frappe.model.set_value(cdt, cdn, 'available_qty', r.message[0].qty_after_transaction || 0);
 					frappe.model.set_value(cdt, cdn, 'rate', r.message[0].valuation_rate || 0);
-					if(row.uom == 'Nos') {
-						frappe.model.set_value(cdt,cdn,'amount',flt(r.message[0].qty_after_transaction || 0) * flt(row.rate));
-					}else{
-						frappe.model.set_value(cdt,cdn,'amount',flt(row.qty_in_kgs) * flt(row.rate));
-					}
+					// if(row.uom == 'Nos') {
+					// 	frappe.model.set_value(cdt,cdn,'amount',flt(r.message[0].qty_after_transaction || 0) * flt(row.rate));
+					// }else{
+					// 	frappe.model.set_value(cdt,cdn,'amount',flt(row.qty_in_kgs) * flt(row.rate));
+					// }
 					
 
 				} else {
 					frappe.model.set_value(cdt, cdn, 'available_qty', 0);
 					frappe.model.set_value(cdt, cdn, 'rate', 0);
 				}
-				calculate_total_amount(frm,cdt,cdn);
+				// calculate_total_amount(frm,cdt,cdn);
 			}
 		});
 		
 
+	},
+	qty:function(frm,cdt,cdn){
+		let row = locals[cdt][cdn];
+		frappe.model.set_value(cdt,cdn,'amount',flt(row.qty) * flt(row.rate));
+		calculate_total_amount(frm,cdt,cdn);
+	},
+	rate:function(frm,cdt,cdn){
+		let row = locals[cdt][cdn];
+		frappe.model.set_value(cdt,cdn,'amount',flt(row.qty) * flt(row.rate));
+		calculate_total_amount(frm,cdt,cdn);
 	}
 });
 
